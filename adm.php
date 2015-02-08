@@ -29,7 +29,7 @@ $usuario = mysql_fetch_object($query);
 		<script src="js/bootstrap.min.js"></script>
   </head>
   <body>
-  <h1>Relatório de Matrículas</h1> 
+  <h1>Administração</h1> 
         <ul>
             <!--<li><strong>ID:</strong> <?php echo $objLogin->getID() ?></li>-->
             <li><strong>Bem Vindo: </strong> <?php echo $objLogin->getLogin() ?></li>
@@ -47,44 +47,7 @@ $usuario = mysql_fetch_object($query);
     </ul>
   </div>
 </div>
-<?php
-// inicio ronaldo
-//requerer objeto consultaData
-require_once('config/consultaData.php');
-$c = new consultarData();
+<strong>...acesso restrito!</strong>
 
-$mes='02';
-
-?>
-<table border="1">
-<tr>
-   <td><b>Data</b></td>
-   <td><b>Quantidade</b></td>
-</tr>
-<?php
-//print 'Consultar matriculas do Mês de Fevereiro';
-$dados = mysql_query($c->porMes($mes));
-
-//listar das matriculas de fevereiro
-//print 'Data';
-while($linha = mysql_fetch_assoc($dados)) {
-?>
-<tr>
-	<td><?php print $linha['data'] ?></td>
-	<td><?php print $linha['quantidade'] ?></td>
-</tr>
-
-<?php
-//print 'Somar a quantde dos registros do mes';
-$soma = mysql_query($c->somarQtdePorMes($mes));
-print $soma;
-
-//print 'Retornar em string o mes selecionado';
-$data = mysql_query($c->retornarData($mes));
-print $c->strMes($data);
-}
-//fim ronaldo
-?>
-</table>
   </body>
 </html>

@@ -72,8 +72,8 @@ $usuario = mysql_fetch_object($query);
     <!--<a class="brand" href="#">Título</a>-->
     <ul class="nav">
       <li><a href="cadastrar.php">Cadastro</a></li>
-      <li><a href="#">Relatórios</a></li>
-      <li><a href="#">Administração</a></li>
+      <li><a href="relatorio.php#">Relatórios</a></li>
+      <li><a href="adm.php">Administração</a></li>
 	  <li><a href="sair.php">Sair</a></li>
     </ul>
   </div>
