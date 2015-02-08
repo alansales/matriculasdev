@@ -112,6 +112,22 @@ class consultarData{
         }
     }
     
+    
+    /**
+     * Método somarQtdePorMes
+     * Esse metodo recebe como parametro o mes e soma toda a quantidade referete
+     * aos registros onde a data é do mes parametro.
+     */
+    public function somarQtdePorMes($mes){
+        if(($mes!='null')||($mes!=null)){
+            $this->SQL ="SELECT sum(quantidade) as TOTAL FROM MATRICULAS WHERE DATA LIKE '%/".$mes."/%'"; 
+            return $this->SQL;
+        }
+        else{
+            return null;   
+        }
+    }
+    
 }
 
 ?>
